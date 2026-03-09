@@ -1,0 +1,122 @@
+[
+  {
+    "commonName": "Lince Ibérico",
+    "scientificName": "lynx pardinus",
+    "habitat": "Doñana y Sierra Morena",
+    "family": "Félido",
+    "image": "lince.png",
+    "type": "mamifero",
+    "status": "En peligro (EN)",
+    "description": "Población en fase de recuperación."
+  },
+  {
+    "commonName": "Gato Montés",
+    "scientificName": "felis silvestris",
+    "habitat": "Bosques y matorrales de la Península",
+    "family": "Félido",
+    "image": "gato.png",
+    "type": "mamifero",
+    "status": "Preocupación menor (LC)",
+    "description": "Principal amenaza hibridación genética con gatos domésticos."
+  },
+  {
+    "commonName": "Lobo Ibérico",
+    "scientificName": "canis lupus signatus",
+    "habitat": "Sierra de la Culebra y Galicia",
+    "family": "Cánido",
+    "image": "lobo.png",
+    "type": "mamifero",
+    "status": "Preocupación menor (LC)",
+    "description": "En expansión poblacional; su estatus varía según la región."
+  },
+  {
+    "commonName": "Águila Imperial",
+    "scientificName": "aquila adalberti",
+    "habitat": "Centro y sur de España",
+    "family": "Accipítrido",
+    "image": "aguila.png",
+    "type": "ave",
+    "status": "Vulnerable (VU)",
+    "description": "Planes de recuperación activos debido a su baja densidad."
+  },
+  {
+    "commonName": "Quebrantahuesos",
+    "scientificName": "gypaetus barbatus",
+    "habitat": "Pirineos y Picos de Europa",
+    "family": "Accipítrido",
+    "image": "gyp.png",
+    "type": "ave",
+    "status": "Casi amenazado (NT)",
+    "description": "Poblaciones locales en seguimiento constante por el riesgo de pérdida de hábitat."
+  },
+  {
+    "commonName": "Buitre Negro",
+    "scientificName": "aegypius monachus",
+    "habitat": "Monfragüe, Sierra de San Pedro, Sierra de Guadarrama, Cabañeros y el Valle de Iruelas",
+    "family": "Accipítrido",
+    "image": "monachus.png",
+    "type": "ave",
+    "status": "Casi amenazado (NT)",
+    "description": "Dependiente de zonas de nidificación específicas y arbolado maduro."
+  },
+  {
+    "commonName": "Cigüeña Negra",
+    "scientificName": "ciconia nigra",
+    "habitat": "Extremadura, Castilla-La Mancha y Castilla y León",
+    "family": "Ciconiido",
+    "image": "ciconia.png",
+    "type": "ave",
+    "status": "Vulnerable (VU)",
+    "description": "Muy sensible a la alteración humana de los humedales y cauces fluviales."
+  },
+  {
+    "commonName": "Malvasía Cabeciblanca",
+    "scientificName": "oxyura leucocephala",
+    "habitat": "Humedales del sur y levante",
+    "family": "Anátido",
+    "image": "malvasia.png",
+    "type": "ave",
+    "status": "Casi amenazado (NT)",
+    "description": "Recuperación notable gracias a la restauración de sus humedales."
+  },
+  {
+    "commonName": "Oso Pardo",
+    "scientificName": "ursus arctos",
+    "habitat": "Cordillera Cantábrica y Pirineos",
+    "family": "Úrsido",
+    "image": "oso.png",
+    "type": "mamifero",
+    "status": "En peligro (EN)",
+    "description": "Especie estrictamente protegida."
+  },
+  {
+    "commonName": "Visón Europeo",
+    "scientificName": "mustela lutreola",
+    "habitat": "Ríos del norte de España (Ebro y afluentes)",
+    "family": "Mustélido",
+    "image": "vison.png",
+    "type": "mamifero",
+    "status": "En peligro crítico (CR)",
+    "description": "Una de las especies de mamíferos más amenazadas de Europa."
+  },
+  {
+    "commonName": "Desmán Ibérico",
+    "scientificName": "galemys pyrenaicus",
+    "habitat": "Ríos limpios de montaña (norte y centro)",
+    "family": "Tálpido",
+    "image": "desman.png",
+    "type": "mamifero",
+    "status": "En peligro (EN)",
+    "description": "Muy afectado por la contaminación de ríos y la fragmentación de sus ecosistemas."
+  },
+  {
+    "commonName": "Tritón Jaspeado",
+    "scientificName": "triturus marmoratus",
+    "habitat": "Charcas y estanques de la mitad norte",
+    "family": "Salamándrido",
+    "image": "jaspe.png",
+    "type": "anfibio",
+    "status": "Casi amenazado (NT)",
+    "description": "Amenazado por la desecación, pérdida y contaminación de charcas temporales."
+  }
+]
