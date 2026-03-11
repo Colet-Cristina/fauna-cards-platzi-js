@@ -1,4 +1,4 @@
-/* ------------ ---- GENERAL AND PAGE ---- ------------ */
+/* ============= CONFIGURACIÓN GENERAL Y PÁGINA ============= */
 body {
   background-color: #714227;
   font-family: "Nunito", sans-serif;
@@ -9,21 +9,24 @@ body {
   flex-direction: column;
 }
 
-.title,
-.subtitle,
-.card-title {
-  font-family: "Lora", serif;
+.main {
+  border-top: 0.2rem solid #000; /* Línea negra divisoria */
+  flex-grow: 1;
 }
+
 .header {
   background-color: #382920;
   margin: 0;
   padding: 0.5rem 0;
   width: 100%;
 }
-.main {
-  border-top: 0.2rem solid #000; /* Línea negra divisoria */
-  flex-grow: 1;
+
+.title,
+.subtitle,
+.card-title {
+  font-family: "Lora", serif;
 }
+
 .title {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
@@ -37,14 +40,15 @@ body {
   margin-bottom: 0;
   text-align: center;
 }
+
 .text-subtitle {
   display: block;
   font-size: 1rem;
   text-align: center;
   margin-top: 0.4rem;
 }
-/* ------------ ---- FILTERS ---- ------------ */
 
+/* ============= FILTROS ============= */
 .filters {
   background-color: #bb8466;
   padding: 1.5rem;
@@ -56,7 +60,7 @@ body {
 
 .search-group {
   display: flex;
-  flex-wrap: wrap; /* Que bajen si no caben */
+  flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   align-items: flex-end;
@@ -64,21 +68,22 @@ body {
   margin: 0 auto;
 }
 
+.search-group label {
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  color: #5d4a3e;
+}
+
+/* Inputs de texto y selectores */
 .input,
 .input-family,
 .input-status,
 .input-name {
   display: flex;
-  flex-direction: column; /* Label arriba y el input debajo */
+  flex-direction: column;
   align-items: flex-start;
   flex: 1;
   min-width: 12rem;
-}
-
-.search-group label {
-  font-family: "Nunito", sans-serif;
-  font-weight: 900;
-  color: #5d4a3e;
 }
 
 .search-name,
@@ -92,7 +97,7 @@ body {
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.6);
 }
 
-/* Contenedor principal */
+/* Contenedor de categorías y checkboxes */
 .input-categories {
   font-family: "Nunito", sans-serif;
   width: 100%;
@@ -101,14 +106,12 @@ body {
   gap: 1rem;
 }
 
-/* ------------ ---- CHECKBOX ---- ------------ */
 .checkbox-group {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
 
-/* El ítem individual */
 .check-item {
   border: 0.1rem solid #382920;
   border-radius: 0.5rem;
@@ -126,26 +129,24 @@ body {
   border-color: #cea48e;
 }
 
-/* Estilo cuando el input está marcado */
 .check-item:has(input:checked) {
   background-color: #714227;
   border-color: #382920;
   color: #cea48e;
 }
 
-.check-item:has(input:checked) .name-check {
-  color: #cea48e;
-}
 .check-item input {
   margin-right: 0.5rem;
   accent-color: #382920;
 }
+
 .name-check {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
   color: #382920;
 }
-/* ------------ ---- RESET ---- ------------ */
+
+/* Botón de Reset de Filtros */
 .btn-reset {
   background-color: #382920;
   color: #cea48e;
@@ -160,11 +161,12 @@ body {
   color: #382920;
 }
 
-/* ------------ ---- COUNTER ---- ------------ */
+/* ============= CONTADOR Y BOTÓN DE JUEGO ============= */
 .info-results {
   display: flex;
-  justify-content: center;
-  margin: 0.5rem 0;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
 }
 
 .counter {
@@ -176,12 +178,34 @@ body {
   font-family: "Nunito", sans-serif;
   color: #382920;
   display: inline-block;
-  min-width: 12.5rem; /* 200px -> 12.5rem */
+  min-width: 12.5rem;
   text-align: center;
 }
 
-/* ------------ ---- CARD ---- ------------ */
+.btn-game {
+  background-color: #bb8466;
+  border: 0.0625rem solid #382920;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.6);
+  font-family: "Nunito", sans-serif;
+  color: #382920;
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  font-weight: 900;
+  transition: all 0.3s ease;
+}
 
+.btn-game:hover {
+  background-color: #382920;
+  color: #cea48e;
+}
+
+/* ============= TARJETA  ============= */
 .app-container {
   display: flex;
   flex-direction: column;
@@ -189,6 +213,7 @@ body {
   gap: 1.5rem;
   margin: 0.3rem 3rem 3rem 3rem;
 }
+
 .card {
   display: flex;
   flex-direction: column;
@@ -200,16 +225,20 @@ body {
   text-align: center;
   margin: 2rem auto;
   width: 70%;
-  animation: fadeInSlideUp 0.5s ease-out forwards; /* Nombre, duración, tipo, estado final */
-}
-
-.card-content {
-  flex-grow: 1;
+  animation: fadeInSlideUp 0.5s ease-out forwards;
 }
 
 .card:hover {
   transform: scale(1.03);
-  box-shadow: 0.8rem 0.8rem 1.5rem rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+  box-shadow: 0.8rem 0.8rem 1.5rem rgba(0, 0, 0, 0.4);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #000000;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0.8rem 0 0 0;
 }
 
 .card-scientific {
@@ -230,13 +259,6 @@ body {
   margin-bottom: 1rem;
 }
 
-.card-title {
-  font-size: 1.5rem;
-  color: #000000;
-  font-weight: bold;
-  line-height: 1;
-  margin: 0.8rem 0 0 0;
-}
 .card-category {
   margin: 0;
   font-family: "Nunito", sans-serif;
@@ -248,6 +270,7 @@ body {
   line-height: 1.4;
   margin: 0;
 }
+
 .status {
   display: inline-block;
   padding: 5px 12px;
@@ -259,7 +282,123 @@ body {
   align-self: center;
 }
 
-/* ------------ ---- FOOTER ---- ------------ */
+.no-results-img {
+  display: block;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+/* ============= TABLERO DEL JUEGO ============= */
+.game-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.btn-next {
+  background-color: #382920;
+  color: #cea48e;
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  border: 0.1rem solid #cea48e;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-next:hover {
+  background-color: #714227;
+  transform: scale(1.05);
+  box-shadow: 0.8rem 0.8rem 1.5rem rgba(0, 0, 0, 0.5);
+}
+
+.btn-back {
+  background-color: transparent;
+  color: #382920;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  border: 2px solid #382920;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background-color: rgba(56, 41, 32, 0.1);
+  text-decoration: underline;
+}
+
+.game-board {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 10px;
+  padding: 20px;
+  border: 2px solid #382920;
+}
+
+.game-card {
+  width: 100px;
+  height: 150px;
+  border: 1px solid black;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  background-color: #382920;
+  color: #cea48e;
+  font-size: 2rem;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: #bb8466;
+  overflow: hidden;
+}
+
+/* ============= FOOTER ============= */
 .footer {
   background-color: #382920;
   margin: 0;
@@ -267,24 +406,26 @@ body {
   width: 100%;
   text-align: center;
 }
+
 .text-footer {
-  margin: 0.2rem 0; /* Esto reduce el espacio entre las líneas del footer */
+  margin: 0.2rem 0;
   font-size: 0.9rem;
 }
 
-/* ------------ ---- QUERIES ---- ------------ */
+/* ============= QUERIES ============= */
 @media (min-width: 768px) {
   .app-container {
-    flex-direction: row; /* Cambiamos a filas */
-    flex-wrap: wrap; /* Si no caben, bajan a la siguiente fila */
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: stretch; /* Que la misma fila midan lo mismo de alto */
+    align-items: stretch;
   }
 
   .card {
-    flex: 1 0 30%; /* Todas crezcan por igual, que no se basen en el contenido interno y tamaño base. */
+    flex: 1 0 30%;
     max-width: 350px;
   }
+
   .card-img {
     width: 100%;
     height: 18rem;
@@ -292,14 +433,14 @@ body {
   }
 }
 
-/* ------------ ---- ANIMATIONS ---- ------------ */
+/* ============= ANIMACIONES ============= */
 @keyframes fadeInSlideUp {
   0% {
-    opacity: 0; /* Empieza invisible */
-    transform: translateY(20px); /* Un poco por debajo de su posición final */
+    opacity: 0;
+    transform: translateY(20px);
   }
   100% {
-    opacity: 1; /* Termina visible */
-    transform: translateY(0); /* En su posición normal */
+    opacity: 1;
+    transform: translateY(0);
   }
 }

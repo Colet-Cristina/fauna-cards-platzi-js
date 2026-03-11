@@ -12,13 +12,13 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <!-- ---------- ---------- -->
+  <!-- ======================= HEADER ======================= -->
 
   <body>
     <header class="header js_header">
       <h1 class="title js_title">Naturaleza en Código</h1>
     </header>
-    <!-- ---------- ---------- -->
+    <!-- ======================= MAIN ======================= -->
 
     <main class="main js_main">
       <section class="intro">
@@ -26,11 +26,11 @@
         <p class="text-subtitle js_textSubtitle">Especies Protegidas</p>
       </section>
 
-      <!-- ---------- ------------- FILTERS ------------- ---------- -->
+      <!-- ======================= FILTERS ======================= -->
 
       <section class="filters js-filters">
         <div class="search-group js_searchGroup">
-          <!-- ---------- NAME ---------- -->
+          <!-- ======================= Mame ======================= -->
           <div class="input-name js_inputName">
             <label for="nameSearch">Nombre:</label>
             <input
@@ -40,9 +40,8 @@
               class="search-name js_searchName"
             />
           </div>
-          <!-- ---------- ---------- -->
 
-          <!-- ---------- FAMILY---------- -->
+          <!-- ======================= family ======================= -->
           <div class="input-family js_inputFamily">
             <label for="familySelect">Familia:</label>
             <select id="familySelect" class="search-family js_searchFamily">
@@ -56,9 +55,8 @@
               <option value="Salamándrido">Anfibios</option>
             </select>
           </div>
-          <!-- ---------- ---------- -->
 
-          <!-- ---------- STATUS ---------- -->
+          <!-- ======================= Status ======================= -->
           <div class="input-status js_inputStatus">
             <label for="statusSelect">Estado:</label>
             <select id="statusSelect" class="search-status js_searchStatus">
@@ -81,7 +79,7 @@
               </option>
             </select>
           </div>
-          <!-- ---------- CATEGORIES ---------- -->
+          <!-- ======================= Categories ======================= -->
           <div class="input-categories js_inputCategories">
             <label class="category-label js_categoryLabel">Categorías:</label>
             <div class="checkbox-group js_checkboxGroup">
@@ -112,7 +110,7 @@
                 <span class="name-check js_nameCheck"> Anfibios</span>
               </label>
 
-              <!-- ---------- RESET ---------- -->
+              <!-- ======================= RESET ======================= -->
               <button id="resetBtn" class="btn-reset js_resetBtn">
                 Limpiar Filtros
               </button>
@@ -120,14 +118,16 @@
           </div>
         </div>
       </section>
-      <!-- ---------- ---------- -->
+      <!-- ======================= ======================= -->
       <section class="info-results js_info-results">
         <p class="counter js_counter">Cargando especies...</p>
+        <button class="btn-game js_btnGame">JUEGO MEMORY</button>
       </section>
-      <!-- ----------   ------------     ---------- -->
+
+      <!-- ======================= ======================= -->
       <div class="app-container js_appContainer" id="app"></div>
     </main>
-    <!-- ---------- ---------- -->
+    <!-- ======================= ======================= -->
 
     <footer class="footer js_footer">
       <p class="text-footer js_textFooter">© 2026 - Fauna Ibérica</p>
@@ -136,9 +136,9 @@
         <small>Imágenes co-creadas con IA (Gemini)</small>
       </p>
     </footer>
-    <!-- ---------- ---------- -->
+    <!-- ======================= ======================= -->
 
     <script src="./js/main.js"></script>
-    <!-- ---------- ---------- -->
+    <!-- ======================= ======================= -->
   </body>
 </html>

@@ -4,28 +4,28 @@
 
 const app = document.querySelector("#app");
 
-// Filtros de texto y select
 const inputName = document.querySelector(`.js_searchName`);
 const selectFamily = document.querySelector(`.js_searchFamily`);
 const selectStatus = document.querySelector(`.js_searchStatus`);
-
-// Filtros de checkbox
 const checkMammal = document.querySelector(`.js_checkMammal`);
 const checkBird = document.querySelector(`.js_checkBird`);
 const checkAmphibian = document.querySelector(`.js_checkAmphibian`);
-
-// Botón de reset
 const resetBtn = document.querySelector(`.js_resetBtn`);
-
-//Contador
 const counter = document.querySelector(`.js_counter`);
+const gameBtn = document.querySelector(".js_btnGame");
+const topBtn = document.querySelector(".js_topBtn");
 
 // SECCIÓN DE DATOS  ===============================================
 
-// Array vacío
+//Variables que cambian y guardan la información.
 let animals = [];
 
-// Traemos los datos con fetch
+// Cartas del juego, cuantas salen y parejas hacertadas.
+let selectedCards = [];
+let currentLevel = 6;
+let matchedPairs = 0;
+
+// Traemos los datos con fetch.
 const getData = () => {
   fetch("./data/data.json")
     .then((response) => {
@@ -33,8 +33,8 @@ const getData = () => {
       return response.json();
     })
     .then((data) => {
-      animals = data; // Guardamos los datos en la variable
-      renderAnimals(animals); // Pintamos
+      animals = data; // Guardamos los datos en la variable.
+      renderAnimals(animals); // Pintamos catálogo.
     })
     .catch((error) => {
       console.error("Hubo un fallo:", error);
@@ -42,20 +42,111 @@ const getData = () => {
     });
 };
 
+// ========= LÓGICA DE JUEGO =========
+
+// Alterna entre catálogo y juego.
+const toggleView = (isGameMode) => {
+  const filters = document.querySelector(".js-filters");
+  const infoResults = document.querySelector(".js_info-results");
+  if (filters) filters.style.display = isGameMode ? "none" : "block";
+  if (infoResults) infoResults.style.display = isGameMode ? "none" : "flex";
+};
+// Mezcla las cartas aleatoriamente.
+const shuffleArray = (array) => [...array].sort(() => Math.random() - 0.5);
+
+//  Saltar de nivel directamente
+const nextLevelAction = () => {
+  if (currentLevel === 6) currentLevel = 8;
+  else if (currentLevel === 8) currentLevel = 12;
+  else currentLevel = 6;
+
+  startNewGame(); // Siguiente nivel.
+};
+// Nuevo nivel
+const startNewGame = () => {
+  matchedPairs = 0; // Reiniciamos contador de aciertos.
+  selectedCards = [];
+  toggleView(true);
+  const halfLevel = currentLevel / 2;
+  const selectedAnimals = animals.slice(0, halfLevel);
+  const gameData = shuffleArray([...selectedAnimals, ...selectedAnimals]);
+  renderGame(gameData);
+};
+
+// HTML del tablero de juego.
+const renderGame = (gameData) => {
+  let html = `
+    <div class="game-controls">
+      <div id="next-level-container"></div>
+      <button class="btn-back" onclick="handleReset()">Volver al catálogo</button>
+    </div>`;
+
+  html += `<div class="game-board">`;
+  gameData.forEach((animal) => {
+    html += `
+            <section class="game-card" data-id="${animal.commonName}" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">?</div>
+                    <div class="card-back"><img src="./images/${animal.image}" style="width:100%; height:100%; object-fit:cover;"></div>
+                </div>
+            </section>`;
+  });
+  html += `</div>`;
+
+  app.innerHTML = html;
+};
+// Lógica de volteo.
+const flipCard = (card) => {
+  if (
+    selectedCards.length < 2 &&
+    !card.querySelector(".card-inner").classList.contains("is-flipped")
+  ) {
+    card.querySelector(".card-inner").classList.add("is-flipped");
+    selectedCards.push(card);
+    if (selectedCards.length === 2) checkMatch();
+  }
+};
+// Comprueba que las cartas coincidan.
+const checkMatch = () => {
+  const [c1, c2] = selectedCards;
+  if (c1.dataset.id === c2.dataset.id) {
+    selectedCards = []; // Acierto.
+    // Sumar pareja encontrada.
+    matchedPairs++;
+
+    // Cuando llegamos al total de parejas del nivel actual.
+    if (matchedPairs === currentLevel / 2) {
+      showNextLevelButton();
+    }
+  } else {
+    // Si no coinciden.
+    setTimeout(() => {
+      c1.querySelector(".card-inner").classList.remove("is-flipped");
+      c2.querySelector(".card-inner").classList.remove("is-flipped");
+      selectedCards = [];
+    }, 1000);
+  }
+};
+//  Muestra el botón de siguiente nivel al ganar.
+const showNextLevelButton = () => {
+  const container = document.querySelector("#next-level-container");
+  if (container) {
+    container.innerHTML = `<button class="btn-next" onclick="nextLevelAction()">¡Nivel completado! Pasar al siguiente</button>`;
+  }
+};
+// ========= FIN LÓGICA DE JUEGO =========
+
 // SECCIÓN DE FUNCIONES =============================================
 
-//  Función para pintar las tarjetas.
-//  Recibe el array
-
+//  Función para pintar las tarjetas. Recibe el array.
 const renderAnimals = (data, totalCount = animals.length) => {
   let htmlContent = "";
-
   // Contador
   if (counter) {
     counter.innerHTML = `Mostrando <strong>${data.length}</strong> de <strong>${totalCount}</strong> animales`;
   }
   data.forEach((animal) => {
-    // Desestructuración para un código más limpio
+    // Desestructuración para un código más limpio.
     const {
       commonName,
       scientificName,
@@ -72,12 +163,9 @@ const renderAnimals = (data, totalCount = animals.length) => {
       scientificName.charAt(0).toUpperCase() + scientificName.slice(1);
 
     // Lógica de colores
-    // Dentro de tu forEach en renderAnimals:
-
     let textColor = "";
-
     switch (
-      true // Usamos 'true' para evaluar condiciones en cada caso
+      true // Usamos 'true' para ver condiciones en cada caso.
     ) {
       case status.includes("EX"):
         textColor = "#000000";
@@ -104,7 +192,7 @@ const renderAnimals = (data, totalCount = animals.length) => {
         textColor = "#D1D1C6";
         break;
       default:
-        textColor = "#382920"; // Marrón base por defecto
+        textColor = "#382920"; // Marrón base por defecto.
     }
 
     const statusStyle = `color: ${textColor}; font-weight: bold;`;
@@ -131,7 +219,7 @@ const renderAnimals = (data, totalCount = animals.length) => {
 
   app.innerHTML =
     htmlContent ||
-    `<p class="no-results">No se han encontrado especies que coincidan con los filtros.</p>`;
+    `<img class="no-results-img" src="./images/not-found.png" alt="No hay resultados">`;
 };
 
 //  Función para la lógica de filtrado
@@ -171,34 +259,40 @@ const applyFilters = () => {
 
   renderAnimals(filteredAnimals);
 };
-// SECCIÓN DE EVENTOS ===============================================
-
-const handleInputFilter = () => {
-  const searchTerm = inputName.value;
-
-  // Estructura Condicional
-  // Validación de longitud mínima para evitar búsquedas erráticas
-  if (searchTerm.length > 0 && searchTerm.length < 2) {
-    counter.innerHTML = "Escribe al menos 2 letras...";
-    return;
-  }
-
-  applyFilters();
-};
 
 const handleReset = (event) => {
-  event.preventDefault();
-  // Reseteamos el formulario
+  if (event) event.preventDefault();
+
+  currentLevel = 6;
+
+  // Limpia los filtros
   inputName.value = "";
   selectFamily.value = "all";
   selectStatus.value = "all";
   checkMammal.checked = false;
   checkBird.checked = false;
   checkAmphibian.checked = false;
-  // Repintamos todo
+
+  // "Volver a catálogo"
+  toggleView(false);
   renderAnimals(animals);
 };
 
+// SECCIÓN DE EVENTOS ===============================================
+
+gameBtn.addEventListener("click", () => {
+  startNewGame();
+});
+
+const handleInputFilter = () => {
+  if (inputName.value.length > 0 && inputName.value.length < 2) {
+    counter.innerHTML = "Escribe al menos 2 letras...";
+    return;
+  }
+  applyFilters();
+};
+
+// Listeners de filtros
 inputName.addEventListener("input", handleInputFilter);
 selectFamily.addEventListener("change", handleInputFilter);
 selectStatus.addEventListener("change", handleInputFilter);
@@ -206,9 +300,16 @@ selectStatus.addEventListener("change", handleInputFilter);
 [checkMammal, checkBird, checkAmphibian].forEach((checkbox) => {
   checkbox.addEventListener("change", handleInputFilter);
 });
+resetBtn.addEventListener("click", handleReset);
 
-if (resetBtn) {
-  resetBtn.addEventListener("click", handleReset);
+//  Evento botón Top
+if (topBtn) {
+  window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
 
 // SECCIÓN DE ACCIONES AL CARGAR LA PÁGINA
