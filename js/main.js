@@ -87,7 +87,7 @@ const renderGame = (gameData) => {
             <section class="game-card" data-id="${animal.commonName}" onclick="flipCard(this)">
                 <div class="card-inner">
                     <div class="card-front">?</div>
-                    <div class="card-back"><img src="./images/${animal.image}" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="card-back"><img class= card-game src="./images/${animal.image}"></div>
                 </div>
             </section>`;
   });
