@@ -4,7 +4,7 @@
     "scientificName": "lynx pardinus",
     "habitat": "Doñana y Sierra Morena",
     "family": "Félido",
-    "image": "lince.png",
+    "image": "lince.jpg",
     "type": "mamifero",
     "status": "En peligro (EN)",
     "description": "Población en fase de recuperación."
@@ -14,7 +14,7 @@
     "scientificName": "felis silvestris",
     "habitat": "Bosques y matorrales de la Península",
     "family": "Félido",
-    "image": "gato.png",
+    "image": "gato.jpg",
     "type": "mamifero",
     "status": "Preocupación menor (LC)",
     "description": "Principal amenaza hibridación genética con gatos domésticos."
@@ -24,7 +24,7 @@
     "scientificName": "canis lupus signatus",
     "habitat": "Sierra de la Culebra y Galicia",
     "family": "Cánido",
-    "image": "lobo.png",
+    "image": "lobo.jpg",
     "type": "mamifero",
     "status": "Preocupación menor (LC)",
     "description": "En expansión poblacional; su estatus varía según la región."
@@ -34,7 +34,7 @@
     "scientificName": "aquila adalberti",
     "habitat": "Centro y sur de España",
     "family": "Accipítrido",
-    "image": "aguila.png",
+    "image": "aguila.jpg",
     "type": "ave",
     "status": "Vulnerable (VU)",
     "description": "Planes de recuperación activos debido a su baja densidad."
@@ -44,7 +44,7 @@
     "scientificName": "gypaetus barbatus",
     "habitat": "Pirineos y Picos de Europa",
     "family": "Accipítrido",
-    "image": "gyp.png",
+    "image": "gyp.jpg",
     "type": "ave",
     "status": "Casi amenazado (NT)",
     "description": "Poblaciones locales en seguimiento constante por el riesgo de pérdida de hábitat."
@@ -54,7 +54,7 @@
     "scientificName": "aegypius monachus",
     "habitat": "Monfragüe, Sierra de San Pedro, Sierra de Guadarrama, Cabañeros y el Valle de Iruelas",
     "family": "Accipítrido",
-    "image": "monachus.png",
+    "image": "monachus.jpg",
     "type": "ave",
     "status": "Casi amenazado (NT)",
     "description": "Dependiente de zonas de nidificación específicas y arbolado maduro."
@@ -64,7 +64,7 @@
     "scientificName": "ciconia nigra",
     "habitat": "Extremadura, Castilla-La Mancha y Castilla y León",
     "family": "Ciconiido",
-    "image": "ciconia.png",
+    "image": "ciconia.jpg",
     "type": "ave",
     "status": "Vulnerable (VU)",
     "description": "Muy sensible a la alteración humana de los humedales y cauces fluviales."
@@ -74,7 +74,7 @@
     "scientificName": "oxyura leucocephala",
     "habitat": "Humedales del sur y levante",
     "family": "Anátido",
-    "image": "malvasia.png",
+    "image": "malvasia.jpg",
     "type": "ave",
     "status": "Casi amenazado (NT)",
     "description": "Recuperación notable gracias a la restauración de sus humedales."
@@ -84,7 +84,7 @@
     "scientificName": "ursus arctos",
     "habitat": "Cordillera Cantábrica y Pirineos",
     "family": "Úrsido",
-    "image": "oso.png",
+    "image": "oso.jpg",
     "type": "mamifero",
     "status": "En peligro (EN)",
     "description": "Especie estrictamente protegida."
@@ -94,7 +94,7 @@
     "scientificName": "mustela lutreola",
     "habitat": "Ríos del norte de España (Ebro y afluentes)",
     "family": "Mustélido",
-    "image": "vison.png",
+    "image": "vison.jpg",
     "type": "mamifero",
     "status": "En peligro crítico (CR)",
     "description": "Una de las especies de mamíferos más amenazadas de Europa."
@@ -104,7 +104,7 @@
     "scientificName": "galemys pyrenaicus",
     "habitat": "Ríos limpios de montaña (norte y centro)",
     "family": "Tálpido",
-    "image": "desman.png",
+    "image": "desman.jpg",
     "type": "mamifero",
     "status": "En peligro (EN)",
     "description": "Muy afectado por la contaminación de ríos y la fragmentación de sus ecosistemas."
@@ -114,9 +114,50 @@
     "scientificName": "triturus marmoratus",
     "habitat": "Charcas y estanques de la mitad norte",
     "family": "Salamándrido",
-    "image": "jaspe.png",
+    "image": "jaspe.jpg",
     "type": "anfibio",
     "status": "Casi amenazado (NT)",
     "description": "Amenazado por la desecación, pérdida y contaminación de charcas temporales."
+  },
+
+  {
+    "commonName": "Cernícalo Primilla",
+    "scientificName": "falco naumanni",
+    "habitat": "Zonas agrícolas y esteparias",
+    "family": "Falconido",
+    "image": "primilla.jpg",
+    "type": "ave",
+    "status": "Vulnerable (VU)",
+    "description": "Ave colonial muy sensible a la pérdida de lugares de nidificación en edificios antiguos."
+  },
+  {
+    "commonName": "Sapo Partero Ibérico",
+    "scientificName": "alytes cisternasii",
+    "habitat": "Zonas de media montaña y dehesas",
+    "family": "Alytido",
+    "image": "sapo.jpg",
+    "type": "anfibio",
+    "status": "Casi amenazado (NT)",
+    "description": "Especie endémica; el macho transporta los huevos en sus patas traseras."
+  },
+  {
+    "commonName": "Águila Pescadora",
+    "scientificName": "pandion haliaetus",
+    "habitat": "Embalses y zonas costeras",
+    "family": "Pandiónido",
+    "image": "pescadora.jpg",
+    "type": "ave",
+    "status": "Vulnerable (VU)",
+    "description": "Tras su extinción como nidificante en el interior, está en proceso de reintroducción."
+  },
+  {
+    "commonName": "Galápago Europeo",
+    "scientificName": "emys orbicularis",
+    "habitat": "Zonas húmedas y cursos de agua lentos",
+    "family": "Emídido",
+    "image": "europeo.jpg",
+    "type": "reptil",
+    "status": "Vulnerable (VU)",
+    "description": "Amenazado por la competencia con especies invasoras como el galápago de Florida."
   }
 ]

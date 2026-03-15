@@ -60,10 +60,15 @@ const shuffleArray = (array) => [...array].sort(() => Math.random() - 0.5);
 
 //  Saltar de nivel directamente
 const nextLevelAction = () => {
-  if (currentLevel === 6) currentLevel = 8;
-  else if (currentLevel === 8) currentLevel = 12;
-  else currentLevel = 6;
-
+  if (currentLevel === 6) {
+    currentLevel = 8;
+  } else if (currentLevel === 8) {
+    currentLevel = 12;
+  } else if (currentLevel === 12) {
+    currentLevel = 16;
+  } else {
+    currentLevel = 6;
+  }
   startNewGame(); // Siguiente nivel
 };
 // Nuevo nivel

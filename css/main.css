@@ -379,9 +379,9 @@ body {
 }
 
 .game-card {
-width: 6.25rem;  
+  width: 6.25rem;
   height: 9.3rem;
-  border: 0.06rem solid black; / 
+  border: 0.06rem solid black;
   cursor: pointer;
 }
 
@@ -430,17 +430,17 @@ width: 6.25rem;
 .topBtn {
   background-color: #382920;
   border: 0.0625rem solid #bb8466;
-  border-radius:50rem;
+  border-radius: 50rem;
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.6);
   font-family: "Nunito", sans-serif;
   color: #bb8466;
   text-align: center;
   position: fixed;
-  bottom: 1.25rem; 
-  right: 1.8rem; 
+  bottom: 1.25rem;
+  right: 1.8rem;
   z-index: 99;
   cursor: pointer;
-  padding: 0.9rem;  
+  padding: 0.9rem;
 }
 
 /* ============= FOOTER ============= */
