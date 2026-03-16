@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naturaleza en Código</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <!-- ======================= HEADER ======================= -->
+
+  <body>
+    <header class="header js_header">
+      <h1 class="title js_title">Naturaleza en Código</h1>
+    </header>
+    <!-- ======================= MAIN ======================= -->
+
+    <main class="main js_main">
+      <section class="intro">
+        <h2 class="subtitle">Fauna Ibérica</h2>
+        <p class="text-subtitle js_textSubtitle">Especies Protegidas</p>
+      </section>
+
+      <!-- ======================= FILTERS ======================= -->
+
+      <section class="filters js-filters">
+        <div class="search-group js_searchGroup">
+          <!-- ======================= Mame ======================= -->
+          <div class="input-name js_inputName">
+            <label for="nameSearch">Nombre:</label>
+            <input
+              type="text"
+              id="nameSearch"
+              placeholder="Ej: Lince..."
+              class="search-name js_searchName"
+            />
+          </div>
+
+          <!-- ======================= family ======================= -->
+          <div class="input-family js_inputFamily">
+            <label for="familySelect">Familia:</label>
+            <select id="familySelect" class="search-family js_searchFamily">
+              <option value="all">Todas las familias</option>
+              <option value="Félido">Félidos</option>
+              <option value="Cánido">Cánidos</option>
+              <option value="Accipítrido">Accipítridos (Aves rapaces)</option>
+              <option value="Úrsido">Úrsidos (Osos)</option>
+              <option value="Mustélido">Mustélidos</option>
+              <option value="Anátido">Anátidos</option>
+              <option value="Salamándrido">Anfibios</option>
+            </select>
+          </div>
+
+          <!-- ======================= Status ======================= -->
+          <div class="input-status js_inputStatus">
+            <label for="statusSelect">Estado:</label>
+            <select id="statusSelect" class="search-status js_searchStatus">
+              <option value="all">Todos los estados</option>
+              <option value="Extinto (EX)">Extinto (EX)</option>
+              <option value="Extinto en estado silvestre (EW)">
+                Extinto en estado silvestre (EW)
+              </option>
+              <option value="En peligro crítico (CR)">
+                En peligro crítico (CR)
+              </option>
+              <option value="En peligro (EN)">En peligro (EN)</option>
+              <option value="Vulnerable (VU)">Vulnerable (VU)</option>
+              <option value="Casi amenazado (NT)">Casi amenazado (NT)</option>
+              <option value="Preocupación menor (LC)">
+                Preocupación menor (LC)
+              </option>
+              <option value="Datos insuficientes (DD)">
+                Datos insuficientes (DD)
+              </option>
+            </select>
+          </div>
+          <!-- ======================= Categories ======================= -->
+          <div class="input-categories js_inputCategories">
+            <label class="category-label js_categoryLabel">Categorías:</label>
+            <div class="checkbox-group js_checkboxGroup">
+              <label class="check-item js_checkItem">
+                <input
+                  type="checkbox"
+                  class="check-mammal js_checkMammal"
+                  value="mamifero"
+                />
+                <span class="name-check js_nameCheck"> Mamíferos</span>
+              </label>
+
+              <label class="check-item js_checkItem">
+                <input
+                  type="checkbox"
+                  class="check-bird js_checkBird"
+                  value="ave"
+                />
+                <span class="name-check js_nameCheck"> Aves</span>
+              </label>
+
+              <label class="check-item js_checkItem">
+                <input
+                  type="checkbox"
+                  class="check-amphibian js_checkAmphibian"
+                  value="anfibio"
+                />
+                <span class="name-check js_nameCheck"> Anfibios</span>
+              </label>
+
+              <!-- ======================= RESET ======================= -->
+              <button id="resetBtn" class="btn-reset js_resetBtn">
+                Limpiar Filtros
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======================= ======================= -->
+      <section class="info-results js_info-results">
+        <p class="counter js_counter">Cargando especies...</p>
+        <button class="btn-game js_btnGame">JUEGO MEMORY</button>
+      </section>
+      <button class="topBtn js_topBtn" title="Ir arriba">TOP</button>
+
+      <!-- ======================= ======================= -->
+      <div class="app-container js_appContainer"></div>
+    </main>
+    <!-- ======================= ======================= -->
+
+    <footer class="footer js_footer">
+      <p class="text-footer js_textFooter">© 2026 - Fauna Ibérica</p>
+      <span>Hecho con 💜 y mucho ☕</span>
+      <p class="text-footer js_textFooter">
+        <small>Imágenes co-creadas con IA (Gemini)</small>
+      </p>
+    </footer>
+    <!-- ======================= ======================= -->
+
+    <script src="./js/main.js"></script>
+    <!-- ======================= ======================= -->
+  </body>
+</html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Created by https://www.gitignore.io/api/sass,node,bower,macos
 
 # Bower
@@ -65,3 +66,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+=======
+# Archivos de documentación personal
+info.md
+>>>>>>> 37153116b79808d65a4372bf2890b018a02f76c3

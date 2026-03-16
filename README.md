@@ -1,7 +1,11 @@
 # 🌿 Naturaleza en Código: Fauna Ibérica
 
 Este proyecto ha sido desarrollado como parte del Curso `Fundamentos de JavaScript de Platzi`, aplicando conceptos avanzados de gestión de datos asíncronos y diseño responsivo con CSS moderno. La aplicación permite explorar la biodiversidad de la península, filtrando especies por su estado de conservación, familia y tipo.
+<<<<<<< HEAD
 ![Imagen captura pantalla](./src/images/captura.jpg)
+=======
+![Imagen captura pantalla](./images/captura.jpg)
+>>>>>>> 37153116b79808d65a4372bf2890b018a02f76c3
 
 ## 🚀 Funcionalidades
 
