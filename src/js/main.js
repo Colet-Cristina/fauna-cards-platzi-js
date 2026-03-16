@@ -1,4 +1,9 @@
 "use strict";
+import { startTimer, stopTimer } from "./modules/timer.js";
+import { getSeconds } from "./modules/timer.js";
+import { flipCard } from "./modules/cards.js";
+import { renderAnimals } from "./modules/paint.js";
+import { getFilteredAnimals } from "./modules/filters.js";
 
 // =============================== SECCIÓN DE QUERY-SELECTOR ===============================
 
@@ -17,28 +22,24 @@ const topBtn = document.querySelector(".js_topBtn");
 
 // =============================== SECCIÓN DE DATOS  ======================================
 
-//Variables que cambian y guardan la información
+//Variables globales
 let animals = [];
 
-// Cartas del juego, cuantas salen y parejas hacertadas
+// Cartas del juego, cuantas salen y parejas acertadas
 let selectedCards = [];
 let currentLevel = 6;
 let matchedPairs = 0;
 
-// Contador
-let timer; // Guarda el tiempo
-let seconds = 0; // Cuenta los segundos
-
-// Traemos los datos con fetch
+// Traemos los datos del api
 const getData = () => {
-  fetch("./data/data.json")
+  fetch("./data/api.json")
     .then((response) => {
       if (!response.ok) throw new Error("Error al recibir los datos");
       return response.json();
     })
     .then((data) => {
       animals = data; // Guardamos los datos en la variable
-      renderAnimals(animals); // Pintamos catálogo
+      renderAnimals(animals, animals.length, app, counter); // Pintamos catálogo
     })
     .catch((error) => {
       console.error("Hubo un fallo:", error);
@@ -112,17 +113,7 @@ const renderGame = (gameData) => {
 
   app.innerHTML = html;
 };
-// Lógica de volteo
-const flipCard = (card) => {
-  if (
-    selectedCards.length < 2 &&
-    !card.querySelector(".card-inner").classList.contains("is-flipped")
-  ) {
-    card.querySelector(".card-inner").classList.add("is-flipped");
-    selectedCards.push(card);
-    if (selectedCards.length === 2) checkMatch();
-  }
-};
+
 // Comprueba que las cartas coincidan
 const checkMatch = () => {
   const [c1, c2] = selectedCards;
@@ -134,11 +125,12 @@ const checkMatch = () => {
     // Cuando llegamos al total de parejas del nivel actual
     if (matchedPairs === currentLevel / 2) {
       stopTimer(); // Parar cronómetro
-      saveRecord(seconds, currentLevel);
-      showNextLevelButton();
+      const finalTime = getSeconds();
+      saveRecord(finalTime, currentLevel);
+      showNextLevelButton(finalTime);
     }
   } else {
-    // Si no coinciden.
+    // Si no coinciden, se voltean de nuevo
     setTimeout(() => {
       c1.querySelector(".card-inner").classList.remove("is-flipped");
       c2.querySelector(".card-inner").classList.remove("is-flipped");
@@ -147,7 +139,7 @@ const checkMatch = () => {
   }
 };
 //  Muestra el botón de siguiente nivel al ganar y los mensajes del cronómetro
-const showNextLevelButton = () => {
+const showNextLevelButton = (finalTime) => {
   const container = document.querySelector("#next-level-container");
   if (container) {
     const recordKey = `bestTime_${currentLevel}`;
@@ -156,163 +148,37 @@ const showNextLevelButton = () => {
     let recordHTML = "";
 
     // Lógica del récord
-    if (seconds <= parseInt(savedRecord)) {
-      recordHTML = `<p class="recordMessage js_recordMessage">¡NUEVO RÉCORD DEL NIVEL!</p>`;
-    } else {
+    if (savedRecord === null || finalTime <= parseInt(savedRecord)) {
+      recordHTML = `<p class="recordMessage">¡NUEVO RÉCORD DEL NIVEL!</p>`;
       recordHTML = `<p class="message js_message">Récord actual del nivel: ${savedRecord}s</p>`;
     }
 
     container.innerHTML = `
-      <p class="js_message">¡Nivel completado en ${seconds} segundos!</p>
+      <p class="js_message">¡Nivel completado en ${finalTime} segundos!</p>
       ${recordHTML}
       <button class="btn-next js_btnNext">Pasar al siguiente nivel</button>
     `;
   }
 };
 
-// Cronómetro
-const startTimer = () => {
-  seconds = 0;
-  const timerElement = document.querySelector(".js_timer");
-
-  timer = setInterval(() => {
-    seconds++;
-    if (timerElement) {
-      timerElement.innerHTML = seconds;
-    }
-  }, 1000);
-};
-
-// Detener cronómetro
-const stopTimer = () => {
-  clearInterval(timer);
-};
-// ========= FIN LÓGICA DE JUEGO =========
-
 // =============================== SECCIÓN DE FUNCIONES ====================================
 
-//  Función para pintar las tarjetas. Recibe el array
-const renderAnimals = (data, totalCount = animals.length) => {
-  let htmlContent = "";
-  // Contador
-  if (counter) {
-    counter.innerHTML = `Mostrando <strong>${data.length}</strong> de <strong>${totalCount}</strong> animales`;
-  }
-  data.forEach((animal) => {
-    // Desestructuración para un código más limpio
-    const {
-      commonName,
-      scientificName,
-      habitat,
-      family,
-      image,
-      type,
-      status,
-      description,
-    } = animal;
-
-    const displayTitle = commonName.toUpperCase();
-    const scientificFormat =
-      scientificName.charAt(0).toUpperCase() + scientificName.slice(1);
-
-    // Lógica de colores
-    let textColor = "";
-    switch (
-      true // Usamos 'true' para ver condiciones en cada caso
-    ) {
-      case status.includes("EX"):
-        textColor = "#000000";
-        break;
-      case status.includes("EW"):
-        textColor = "#545454";
-        break;
-      case status.includes("CR"):
-        textColor = "#D20000";
-        break;
-      case status.includes("EN"):
-        textColor = "#FF6600";
-        break;
-      case status.includes("VU"):
-        textColor = "#FFCC00";
-        break;
-      case status.includes("NT"):
-        textColor = "#CCE226";
-        break;
-      case status.includes("LC"):
-        textColor = "#60C659";
-        break;
-      case status.includes("DD"):
-        textColor = "#D1D1C6";
-        break;
-      default:
-        textColor = "#382920"; // Marrón base por defecto
-    }
-
-    const statusStyle = `color: ${textColor}; font-weight: bold;`;
-
-    htmlContent += `
-      <section class="card">
-        <h3 class="card-title js_cardTitle">${displayTitle}</h3>
-
-        <p class="card-scientific"><i>${scientificFormat}</i></p> 
-
-        <img src="./images/${image}" alt="${commonName}" class="card-img js_cardImg">
-
-        <p class="card-category js_cardCategory"> ${family} </p>
-
-        <p class="card-habitat js_cardHabitat"> 
-          <strong>Población principal:</strong> ${habitat}.
-        </p>
-
-        <p class="description js_descripyion">${description}.</p>
-        <p class="status" style="${statusStyle}">${status}</p>
-      </section>
-    `;
-  });
-
-  app.innerHTML =
-    htmlContent ||
-    `<img class="no-results-img" src="./images/not-found.png" alt="No hay resultados">`;
-};
-
-//  Función para la lógica de filtrado
-
+//  Función para la lógica de filtrado usando el módulo filters.js
 const applyFilters = () => {
-  const searchName = inputName.value.toLowerCase();
-  const searchFamily = selectFamily.value;
-  const searchStatus = selectStatus.value;
+  const filteredAnimals = getFilteredAnimals(
+    animals,
+    inputName.value.toLowerCase(),
+    selectFamily.value,
+    selectStatus.value,
+    checkMammal.checked,
+    checkBird.checked,
+    checkAmphibian.checked,
+  );
 
-  const isMammal = checkMammal.checked;
-  const isBird = checkBird.checked;
-  const isAmphibian = checkAmphibian.checked;
-
-  const filteredAnimals = animals.filter((animal) => {
-    // Filtro Nombre
-    const matchName = animal.commonName.toLowerCase().includes(searchName);
-
-    // Filtro Familia
-    const matchFamily =
-      searchFamily === "all" || animal.family === searchFamily;
-
-    // Filtro Estado
-    const matchStatus =
-      searchStatus === "all" || animal.status === searchStatus;
-
-    // Filtro Checkbox
-    let matchType = true;
-    if (isMammal || isBird || isAmphibian) {
-      matchType =
-        (isMammal && animal.type === "mamifero") ||
-        (isBird && animal.type === "ave") ||
-        (isAmphibian && animal.type === "anfibio");
-    }
-
-    return matchName && matchFamily && matchStatus && matchType;
-  });
-
-  renderAnimals(filteredAnimals);
+  renderAnimals(filteredAnimals, animals.length, app);
 };
 
+// Reinicia el juego y los filtros
 const handleReset = (event) => {
   if (event) event.preventDefault();
 
@@ -328,10 +194,10 @@ const handleReset = (event) => {
 
   // "Volver a catálogo"
   toggleView(false);
-  renderAnimals(animals);
+  renderAnimals(animals, animals.length, app);
 };
-// Función para comparar tiempos
-//Clave única por nivel
+
+// Función para comparar tiempos y guardarlos
 const saveRecord = (time, level) => {
   const recordKey = `bestTime_${level}`;
   const savedRecord = localStorage.getItem(recordKey);
@@ -349,7 +215,7 @@ app.addEventListener("click", (event) => {
   // Tarjeta
   const card = event.target.closest(".game-card");
   if (card) {
-    flipCard(card);
+    flipCard(card, selectedCards, checkMatch);
   }
 
   // Botón de volver
