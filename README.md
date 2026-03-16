@@ -1,6 +1,8 @@
 # 🌿 Naturaleza en Código: Fauna Ibérica
 
-Este proyecto ha sido desarrollado como parte del Curso `Fundamentos de JavaScript de Platzi`, aplicando conceptos avanzados de gestión de datos asíncronos y diseño responsivo con CSS moderno. La aplicación permite explorar la biodiversidad de la península, filtrando especies por su estado de conservación, familia y tipo.
+## Descripción del Proyecto
+
+Este proyecto es una aplicación web interactiva desarrollada como parte del curso `Fundamentos de JavaScript de Platzi`, La aplicación permite explorar parte del catálogo de fauna ibérica protegida, filtrar especies por nombre, familia o estado de conservación, y disfrutar de un juego de memoria (Memory Game) integrado.
 
 # ![Imagen captura pantalla](./src/images/captura.jpg)
 
@@ -26,18 +28,37 @@ Además del catálogo, he implementado un **juego de memoria interactivo** para 
 ### Estructura y Estilo
 
 - **HTML5:** Estructura semántica y formularios accesibles.
-- **CSS3:**
-  - Layout mediante **Flexbox** y **CSS Grid** para un diseño responsivo.
+- **CSS3 / Sass (SCSS):** - Layout mediante **Flexbox** y **CSS Grid**.
   - Uso de unidades relativas `rem` para accesibilidad.
-  - Selectores modernos como `:has()` para estados reactivos en componentes.
+  - Selectores modernos como `:has()`.
+  - **Arquitectura Modular:** Estructura de estilos escalable (`core/`, `components/`, `variables.scss`).
 
-### Lógica y Programación (JavaScript ES6+)
+### Lógica (JavaScript ES6+)
 
-- **Asincronía:** Consumo de datos mediante `fetch` y promesas (`.then`, `.catch`).
-- **Manipulación de datos:** Uso de métodos de array (`.filter()`, `.forEach()`) y desestructuración para un código limpio.
-- **Dinamismo:** Generación de HTML dinámico mediante **Template Strings** (usando `` `backticks` ``).
-- **Manipulación del DOM:** Delegación de eventos (`event.target.closest`) para manejar las cartas y botones eficientemente.
-- **Lógica de Estado:** Gestión de volteo (`is-flipped`), comparación de parejas y escalabilidad de niveles.
-- **Almacenamiento:** Implementación de `localStorage` para persistencia de récords de tiempo por nivel.
+Este proyecto se ha desarrollado bajo los estándares de calidad aprendidos en el bootcamp de **Adalab**:
+
+- **Arquitectura:** Implementación de una estructura modular profesional, utilizando el **Adalab Starter Kit** como base para el entorno de compilación (Sass/JS).
+- **Refactorización:** El proyecto cuenta con una estructura de estilos modular, priorizando la mantenibilidad y escalabilidad del código.
+- **Buenas Prácticas:** Código limpio, uso de control de versiones con Git y metodologías de desarrollo frontend profesional.
+
+## Estructura del proyecto
+
+```text
+src/
+ ├── scss/
+ │    ├── main.scss
+ │    ├── core/
+ │    └── components/
+ └── js/
+      └── main.js    # Lógica principal y módulos
+```
 
 ---
+
+## Instalación y Ejecución
+
+Clona este repositorio.
+
+Instala las dependencias:`npm install`
+
+Inicia el proyecto:`npm run dev`

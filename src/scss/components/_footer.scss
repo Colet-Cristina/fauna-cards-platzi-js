@@ -1,0 +1,14 @@
+/* ============= FOOTER ============= */
+.footer {
+  background-color: $color-brown-dark;
+  margin: 0;
+  padding: 1.5rem 0;
+  width: 100%;
+  text-align: center;
+
+  .text-footer {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    color: $color-brown-light; // Usamos tu variable de color claro
+  }
+}

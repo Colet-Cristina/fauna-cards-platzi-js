@@ -1,0 +1,21 @@
+/* ============= INTRO (Fauna Ibérica) ============= */
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Esto centra horizontalmente
+  justify-content: center; // Esto centra verticalmente (opcional)
+  margin: 2rem 0;
+  text-align: center; // Por si acaso hay texto que no sea flex
+
+  .subtitle {
+    font-family: $font-lora;
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .text-subtitle {
+    font-family: $font-nunito;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+}

@@ -1,0 +1,107 @@
+/* ============= CATÁLOGO DE TARJETAS ============= */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0.3rem 3rem 3rem 3rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-brown-light;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  box-shadow: $shadow-large;
+  color: $color-brown-dark;
+  text-align: center;
+  margin: 2rem auto;
+  width: 70%;
+  animation: fadeInSlideUp 0.5s ease-out forwards;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0.8rem 0.8rem 1.5rem rgba($color-black, 0.4);
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    color: $color-black;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0.8rem 0 0 0;
+    font-family: $font-lora;
+  }
+
+  .card-scientific {
+    font-family: $font-lora;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #5d3a26; // Podrías crear una variable para este marrón
+    margin: 0.1rem 0 0.8rem 0;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 15rem;
+    object-fit: contain;
+    background-color: #e4dac9;
+    box-shadow: $shadow-standard;
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-category {
+    margin: 0;
+    font-family: $font-nunito;
+    font-weight: bold;
+  }
+
+  .card-habitat {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .status {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    border-radius: 0.75rem;
+    background-color: $color-brown-dark;
+    color: $color-sand;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-top: auto;
+    align-self: center;
+  }
+}
+
+.no-results-img {
+  display: block;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+  animation: fadeIn 1s;
+}
+
+/* Media Query Responsive */
+@media (min-width: 768px) {
+  .app-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .card {
+    flex: 1 0 30%;
+    max-width: 350px;
+
+    .card-img {
+      height: 18rem;
+      object-fit: cover;
+    }
+  }
+}

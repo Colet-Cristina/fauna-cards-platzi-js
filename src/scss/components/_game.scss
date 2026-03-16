@@ -1,0 +1,188 @@
+/* ============= TABLERO DEL JUEGO ============= */
+.game-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+
+  .btn-next {
+    background-color: $color-brown-dark;
+    color: $color-sand;
+    font-family: $font-nunito;
+    font-weight: 900;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border: 0.1rem solid $color-sand;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    box-shadow: $shadow-standard;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $color-brown-medium;
+      transform: scale(1.05);
+      box-shadow: $shadow-large;
+    }
+  }
+
+  .btn-back {
+    background-color: transparent;
+    color: $color-brown-dark;
+    font-family: $font-nunito;
+    font-weight: 700;
+    border: 0.125rem solid $color-brown-dark;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: rgba($color-brown-dark, 0.1);
+      text-decoration: underline;
+    }
+  }
+}
+
+#next-level-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
+
+  .message {
+    color: $color-white;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    text-align: center;
+  }
+
+  .recordMessage {
+    color: $color-record-yellow;
+    font-size: 1.1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+  }
+}
+
+.game-board {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 10px;
+  padding: 1.25rem;
+  border: 0.125rem solid $color-brown-dark;
+}
+
+.game-card {
+  width: 6.25rem;
+  height: 9.3rem;
+  border: 0.06rem solid $color-black;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+
+  &.is-flipped {
+    transform: rotateY(180deg);
+  }
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  background-color: $color-brown-dark;
+  color: $color-sand;
+  font-size: 2rem;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: $color-brown-light;
+  overflow: hidden;
+
+  .card-game {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.5rem;
+  }
+}
+
+.topBtn {
+  background-color: $color-brown-dark;
+  border: 0.0625rem solid $color-brown-light;
+  border-radius: 50rem;
+  box-shadow: $shadow-standard;
+  font-family: $font-nunito;
+  color: $color-brown-light;
+  text-align: center;
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.8rem;
+  z-index: 99;
+  cursor: pointer;
+  padding: 0.9rem;
+}
+
+/* ============= CONTADOR Y BOTÓN DE JUEGO ============= */
+.info-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+
+  .counter {
+    background-color: $color-brown-light;
+    border: 0.0625rem solid $color-brown-dark;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: $shadow-standard;
+    font-family: $font-nunito;
+    color: $color-brown-dark;
+    display: inline-block;
+    min-width: 12.5rem;
+    text-align: center;
+  }
+
+  .btn-game {
+    background-color: $color-brown-dark;
+    border: 0.0625rem solid $color-brown-light;
+    border-radius: 0.5rem;
+    box-shadow: $shadow-standard;
+    font-family: $font-nunito;
+    color: $color-brown-light;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    font-weight: 900;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $color-brown-dark;
+      color: $color-sand;
+    }
+  }
+}
