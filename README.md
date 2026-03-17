@@ -4,7 +4,9 @@
 
 Este proyecto es una aplicación web interactiva desarrollada como parte del curso `Fundamentos de JavaScript de Platzi`, La aplicación permite explorar parte del catálogo de fauna ibérica protegida, filtrar especies por nombre, familia o estado de conservación, y disfrutar de un juego de memoria (Memory Game) integrado.
 
-# ![Imagen captura pantalla](./src/images/captura.jpg)
+Link al proyecto: [Ver web en directo](https://colet-cristina.github.io/fauna-cards-platzi-js/)
+
+# ![Imagen captura pantalla](./public/images/captura.jpg)
 
 ## 🚀 Funcionalidades
 
