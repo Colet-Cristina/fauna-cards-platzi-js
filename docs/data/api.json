@@ -34,7 +34,7 @@
     "scientificName": "aquila adalberti",
     "habitat": "Centro y sur de España",
     "family": "Accipítrido",
-    "image": "/images/animals/aguila.jpg",
+    "image": "images/animals/aguila.jpg",
     "type": "ave",
     "status": "Vulnerable (VU)",
     "description": "Planes de recuperación activos debido a su baja densidad."
@@ -44,7 +44,7 @@
     "scientificName": "gypaetus barbatus",
     "habitat": "Pirineos y Picos de Europa",
     "family": "Accipítrido",
-    "image": "/images/animals/gyp.jpg",
+    "image": "images/animals/gyp.jpg",
     "type": "ave",
     "status": "Casi amenazado (NT)",
     "description": "Poblaciones locales en seguimiento constante por el riesgo de pérdida de hábitat."
@@ -64,7 +64,7 @@
     "scientificName": "ciconia nigra",
     "habitat": "Extremadura, Castilla-La Mancha y Castilla y León",
     "family": "Ciconiido",
-    "image": "/images/animals/ciconia.jpg",
+    "image": "images/animals/ciconia.jpg",
     "type": "ave",
     "status": "Vulnerable (VU)",
     "description": "Muy sensible a la alteración humana de los humedales y cauces fluviales."
@@ -74,7 +74,7 @@
     "scientificName": "oxyura leucocephala",
     "habitat": "Humedales del sur y levante",
     "family": "Anátido",
-    "image": "/images/animals/malvasia.jpg",
+    "image": "images/animals/malvasia.jpg",
     "type": "ave",
     "status": "Casi amenazado (NT)",
     "description": "Recuperación notable gracias a la restauración de sus humedales."
@@ -94,7 +94,7 @@
     "scientificName": "mustela lutreola",
     "habitat": "Ríos del norte de España (Ebro y afluentes)",
     "family": "Mustélido",
-    "image": "/images/animals/vison.jpg",
+    "image": "images/animals/vison.jpg",
     "type": "mamifero",
     "status": "En peligro crítico (CR)",
     "description": "Una de las especies de mamíferos más amenazadas de Europa."
@@ -104,7 +104,7 @@
     "scientificName": "galemys pyrenaicus",
     "habitat": "Ríos limpios de montaña (norte y centro)",
     "family": "Tálpido",
-    "image": "/images/animals/desman.jpg",
+    "image": "images/animals/desman.jpg",
     "type": "mamifero",
     "status": "En peligro (EN)",
     "description": "Muy afectado por la contaminación de ríos y la fragmentación de sus ecosistemas."
@@ -114,7 +114,7 @@
     "scientificName": "triturus marmoratus",
     "habitat": "Charcas y estanques de la mitad norte",
     "family": "Salamándrido",
-    "image": "/images/animals/jaspe.jpg",
+    "image": "images/animals/jaspe.jpg",
     "type": "anfibio",
     "status": "Casi amenazado (NT)",
     "description": "Amenazado por la desecación, pérdida y contaminación de charcas temporales."
