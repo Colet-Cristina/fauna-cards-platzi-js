@@ -4,7 +4,7 @@
     "scientificName": "lynx pardinus",
     "habitat": "Doñana y Sierra Morena",
     "family": "Félido",
-    "image": "/images/animals/lince.jpg",
+    "image": "images/animals/lince.jpg",
     "type": "mamifero",
     "status": "En peligro (EN)",
     "description": "Población en fase de recuperación."
@@ -14,7 +14,7 @@
     "scientificName": "felis silvestris",
     "habitat": "Bosques y matorrales de la Península",
     "family": "Félido",
-    "image": "/images/animals/gato.jpg",
+    "image": "images/animals/gato.jpg",
     "type": "mamifero",
     "status": "Preocupación menor (LC)",
     "description": "Principal amenaza hibridación genética con gatos domésticos."
@@ -24,7 +24,7 @@
     "scientificName": "canis lupus signatus",
     "habitat": "Sierra de la Culebra y Galicia",
     "family": "Cánido",
-    "image": "/images/animals/lobo.jpg",
+    "image": "images/animals/lobo.jpg",
     "type": "mamifero",
     "status": "Preocupación menor (LC)",
     "description": "En expansión poblacional; su estatus varía según la región."
@@ -54,7 +54,7 @@
     "scientificName": "aegypius monachus",
     "habitat": "Monfragüe, Sierra de San Pedro, Sierra de Guadarrama, Cabañeros y el Valle de Iruelas",
     "family": "Accipítrido",
-    "image": "/images/animals/monachus.jpg",
+    "image": "images/animals/monachus.jpg",
     "type": "ave",
     "status": "Casi amenazado (NT)",
     "description": "Dependiente de zonas de nidificación específicas y arbolado maduro."
@@ -84,7 +84,7 @@
     "scientificName": "ursus arctos",
     "habitat": "Cordillera Cantábrica y Pirineos",
     "family": "Úrsido",
-    "image": "/images/animals/oso.jpg",
+    "image": "images/animals/oso.jpg",
     "type": "mamifero",
     "status": "En peligro (EN)",
     "description": "Especie estrictamente protegida."
@@ -124,7 +124,7 @@
     "scientificName": "falco naumanni",
     "habitat": "Zonas agrícolas y esteparias",
     "family": "Falconido",
-    "image": "/images/animals/primilla.jpg",
+    "image": "images/animals/primilla.jpg",
     "type": "ave",
     "status": "Vulnerable (VU)",
     "description": "Ave colonial muy sensible a la pérdida de lugares de nidificación en edificios antiguos."
@@ -134,7 +134,7 @@
     "scientificName": "alytes cisternasii",
     "habitat": "Zonas de media montaña y dehesas",
     "family": "Alytido",
-    "image": "/images/animals/sapo.jpg",
+    "image": "images/animals/sapo.jpg",
     "type": "anfibio",
     "status": "Casi amenazado (NT)",
     "description": "Especie endémica; el macho transporta los huevos en sus patas traseras."
@@ -144,7 +144,7 @@
     "scientificName": "pandion haliaetus",
     "habitat": "Embalses y zonas costeras",
     "family": "Pandiónido",
-    "image": "/images/animals/pescadora.jpg",
+    "image": "images/animals/pescadora.jpg",
     "type": "ave",
     "status": "Vulnerable (VU)",
     "description": "Tras su extinción como nidificante en el interior, está en proceso de reintroducción."
@@ -154,7 +154,7 @@
     "scientificName": "emys orbicularis",
     "habitat": "Zonas húmedas y cursos de agua lentos",
     "family": "Emídido",
-    "image": "/images/animals/europeo.jpg",
+    "image": "images/animals/europeo.jpg",
     "type": "reptil",
     "status": "Vulnerable (VU)",
     "description": "Amenazado por la competencia con especies invasoras como el galápago de Florida."
