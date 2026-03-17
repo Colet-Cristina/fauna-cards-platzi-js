@@ -45,12 +45,13 @@ Este proyecto se ha desarrollado bajo los estándares de calidad aprendidos en e
 
 ```text
 src/
- ├── scss/
- │    ├── main.scss
- │    ├── core/
- │    └── components/
- └── js/
-      └── main.js    # Lógica principal y módulos
+ ├── partials/         # Componentes HTML reutilizables (_head, _filters, etc.)
+ ├── scss/             # Estilos modulares con Sass
+ │    ├── core/        # Variables, reset y funciones base
+ │    └── components/  # Estilos específicos de cada componente
+ ├── js/               # Lógica de la aplicación y módulos
+ ├── data/             # Archivos JSON con la información de la fauna
+ └── index.html        # Orquestador principal de la web
 ```
 
 ---
