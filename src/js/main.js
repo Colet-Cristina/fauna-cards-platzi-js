@@ -32,7 +32,7 @@ let matchedPairs = 0;
 
 // Traemos los datos del api
 const getData = () => {
-  fetch("./data/api.json")
+  fetch("data/api.json")
     .then((response) => {
       if (!response.ok) throw new Error("Error al recibir los datos");
       return response.json();
@@ -104,7 +104,7 @@ const renderGame = (gameData) => {
       <section class="game-card" data-id="${animal.commonName}" tabindex="0">
         <div class="card-inner">
             <div class="card-front">?</div>
-            <div class="card-back"><img class="card-game" src="./images/${animal.image}"></div>
+            <div class="card-back"><img class="card-game" src="${animal.image}"></div>
         </div>
       </section>`;
   });

@@ -67,7 +67,7 @@ export const renderAnimals = (data, totalCount, container) => {
 
         <p class="card-scientific"><i>${scientificFormat}</i></p> 
 
-        <img src="./images/${image}" alt="${commonName}" class="card-img js_cardImg">
+        <img src="${image}" alt="${commonName}" class="card-img js_cardImg">
 
         <p class="card-category js_cardCategory"> ${family} </p>
 
