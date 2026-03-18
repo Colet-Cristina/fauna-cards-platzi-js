@@ -96,8 +96,10 @@ const renderGame = (gameData) => {
   Tiempo transcurrido: <span class="timer js_timer">0</span> segundos
 </div>
   </div>`;
+  // añadimos la clase 'level-1'
+  const extraClass = currentLevel === 6 ? "level-1" : "";
 
-  html += `<div class="game-board">`;
+  html += `<div class="game-board ${extraClass}">`;
 
   gameData.forEach((animal) => {
     html += `

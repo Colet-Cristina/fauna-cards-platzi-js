@@ -83,5 +83,5 @@ export const renderAnimals = (data, totalCount, container) => {
 
   container.innerHTML =
     htmlContent ||
-    `<img class="no-results-img" src="/images/not-found.png" alt="No hay resultados">`;
+    `<img class="no-results-img" src="./images/not-found.png" alt="No hay resultados">`;
 };
